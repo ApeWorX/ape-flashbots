@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ape-flashbots"
-description = "ape-flashbots: Ape plugin"
+description = "ape_flashbots: ApeWorx implementation of web3-flashbots. Allows for bundled transactions"
 readme = "README.md"
 authors = [
     {name = "ApeWorX Ltd.", email = "admin@apeworx.io"}
