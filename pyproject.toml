@@ -111,9 +111,10 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
+"ape_flashbots/**/*.py" = ["E402", "F811", "T100"]
 "version.py" = ["ALL"]
 "__init__.py" = ["F401"]
-"tests/**/*.py" = ["ARG001", "ARG002"]  # Pytest fixtures may appear unused
+"tests/**/*.py" = ["ARG001", "ARG002", "E402", "F811", "T100"]  # Pytest fixtures may appear unused
 
 [tool.ruff.lint.isort]
 force-wrap-aliases = true
