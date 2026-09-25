@@ -27,6 +27,9 @@ classifiers = [
 requires-python = ">=3.10"
 dependencies = [
     "eth-ape>=0.1.0b2",
+    "flashbots",
+    "python-decouple",
+    "web3",
 ]
 dynamic = ["version"]
 
@@ -135,3 +138,16 @@ markers = "fuzzing: Run Hypothesis fuzz test suite"
 
 [tool.mdformat]
 number = true
+
+[[tool.mypy.overrides]]
+module = "flashbots"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "flashbots.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "decouple"
+ignore_missing_imports = true
+
