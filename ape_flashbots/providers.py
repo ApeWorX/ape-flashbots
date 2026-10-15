@@ -2,14 +2,8 @@ import json
 import os
 
 import requests  # type: ignore
-from ape.api import (
-    AccountAPI,
-    PluginConfig,
-    ProviderAPI,
-    TransactionAPI,
-    UpstreamProvider,
-    Web3Provider,
-)
+from ape.api import AccountAPI, PluginConfig, ProviderAPI, TransactionAPI, UpstreamProvider
+from ape_ethereum.provider import Web3Provider
 from eth_account import messages
 from web3 import HTTPProvider, Web3
 
