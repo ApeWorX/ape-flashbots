@@ -1,22 +1,15 @@
 import json
 import os
-from typing import List, Optional
 
 import requests  # type: ignore
-from ape.api import (
-    AccountAPI,
-    ConfigItem,
-    ProviderAPI,
-    TransactionAPI,
-    UpstreamProvider,
-    Web3Provider,
-)
+from ape.api import AccountAPI, PluginConfig, ProviderAPI, TransactionAPI, UpstreamProvider
+from ape_ethereum.provider import Web3Provider
 from eth_account import messages
 from web3 import HTTPProvider, Web3
 
 
-class FlashbotsConfig(ConfigItem):
-    upstream: Optional[str] = None
+class FlashbotsConfig(PluginConfig):
+    upstream: str | None = None
 
 
 class FlashbotsProvider(Web3Provider, ProviderAPI):
@@ -42,7 +35,7 @@ class FlashbotsProvider(Web3Provider, ProviderAPI):
     def disconnect(self):
         self._web3 = None
 
-    def send_bundle(self, bundle: List[TransactionAPI], sealer: AccountAPI):
+    def send_bundle(self, bundle: list[TransactionAPI], sealer: AccountAPI):
         body = {
             "id": "0x" + os.urandom(4).hex(),
             "method": "eth_sendBundle",
