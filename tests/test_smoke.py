@@ -2,7 +2,7 @@
 
 
 def test_import_plugin():
-    from ape_flashbots import providers as flashbots_providers
+    from ape_flashbots.providers import FlashbotsConfig, FlashbotsProvider
 
-    assert flashbots_providers.FlashbotsProvider is not None
-    assert flashbots_providers.FlashbotsConfig is not None
+    assert FlashbotsProvider is not None
+    assert FlashbotsConfig is not None
