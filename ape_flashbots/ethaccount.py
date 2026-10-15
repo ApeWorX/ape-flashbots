@@ -57,7 +57,7 @@ class EthAccount:
             else:
                 raise
 
-    def flashbot_request(self) -> [list]:
+    def flashbot_request(self) -> list:
         nonce = self.w3.eth.get_transaction_count(self.eth_account_from.address)
         signed_tx: SignTx = {
             "to": self.eth_account_to.address,
