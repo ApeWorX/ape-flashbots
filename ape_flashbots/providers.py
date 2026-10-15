@@ -4,7 +4,7 @@ import os
 import requests  # type: ignore
 from ape.api import (
     AccountAPI,
-    ConfigItem,
+    PluginConfig,
     ProviderAPI,
     TransactionAPI,
     UpstreamProvider,
@@ -14,7 +14,7 @@ from eth_account import messages
 from web3 import HTTPProvider, Web3
 
 
-class FlashbotsConfig(ConfigItem):
+class FlashbotsConfig(PluginConfig):
     upstream: str | None = None
 
 
